@@ -1,0 +1,458 @@
+*
+{
+    box-sizing:border-box;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+body h1, h2
+{
+    font-family:'Shrikhand', cursive; ;
+}
+
+/*GENERAL*/
+.flexcenter
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flexaround
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.flexbetween
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flexcolumncenter
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.flexcolumnaround
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.flexcolumnbetween
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.colorprim1
+{
+    color: #9356DC ;
+}
+.colorprim2
+{
+    color: #FF79DA;
+}
+.colorprim3
+{
+    color: #99E2D0;
+}
+
+/*LOADER*/
+.loader
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0px;
+    background-color: white;
+    animation: clock 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    z-index: 3;
+}
+.clock
+{
+    position: relative;
+    border: 10px solid #FF79DA;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.clock .hand
+{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%);    
+    transform-origin: bottom;
+    border: 3px solid transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clock .hand.hour 
+{
+    width: 8px;
+    height: 35%;
+    animation: rotate 5s linear infinite;
+    background-color: #9356DC;
+}
+
+.clock .hand.minute 
+{
+    width: 6px;
+    height: 40%;
+    z-index: 10;
+    animation: rotate 2s linear infinite;
+    background-color: #99E2D0;
+}
+
+@keyframes rotate 
+{
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+@keyframes clock 
+{
+    to {opacity: 0;
+    visibility: hidden;}
+}
+
+/*HEADER*/
+.title
+{
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+    box-shadow: 0px 1px 5px rgb(146, 145, 145);
+    margin-bottom: 3px;
+    width:100%;
+}
+.title h1
+{
+    margin:5px;
+}
+.searchbar
+{
+    gap:25px;
+    width:100%;
+    background-color:#dfdfdf;
+    height:35px;
+}
+.searchbar i
+{
+    margin-left: 48px;
+}  
+.searchbar .input
+{
+    border: none;
+    background-color:#dfdfdf;
+}
+.caption
+{
+    width:100%;
+    background-color: #F2F2F2;
+    text-align: center;
+    padding: 25px;
+}
+.caption h3
+{
+    font-size: 20px;
+}
+.caption .searchbutton
+{
+    height: 50px;
+    width: 190px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 3px 10px rgb(177, 177, 177);
+    color: white;
+    background-image: linear-gradient(to bottom right,#ff79da, #9356dc);
+    transition: all 200ms ease-in;
+}
+.caption .searchbutton:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.caption p
+{
+    font-weight: lighter;
+}
+.fonction
+{
+    width:100%;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.fonction p 
+{
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #9356dc;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+}
+.fonction ol
+{
+    padding-left: 10px;
+}
+.fonction li
+{
+    display: flex;
+    justify-content: flex-start;
+    width:99%;
+    border-radius: 15px;
+    height: 60px;
+    align-items: center;
+    background-color: #F2F2F2;
+    margin-bottom: 15px;
+    box-shadow: 0px 1px 10px rgb(209, 209, 209);
+    transition: all 200ms ease-in;
+}
+.fonction li:hover
+{
+    cursor: pointer;
+    background-color: rgba(146, 86, 220, 0.438);
+}
+.fonction li:hover i
+{
+    color: rgb(146, 86, 220); 
+}
+.fonction i 
+{
+    margin-left: 30px;
+    margin-right: 30px;;
+}
+.colori
+{
+    color: gray;
+}
+
+/*BODY*/
+.restaurants
+{
+    background-color: #F2F2F2;
+    height: auto;
+    width: 100%;
+    padding: 20px 15px 50px 15px;
+}
+.restaurants h3
+{
+    font-size: 20px;
+}
+.blocrestaurants
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+}
+.restaurantscard
+{
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 1px 10px rgb(209, 209, 209);
+    transition: all 200ms ease-in;
+}
+.restaurantscard:hover
+{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+.restaurantscard a
+{
+    text-decoration: none;
+    color: black
+}
+.restaurantsimg img
+{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+}
+.restaurantstitle h4, p
+{
+    margin: 12px;
+}
+.restaurantsitem p
+{
+    font-weight: lighter;
+    margin-left: 12px;
+}
+.like
+{
+    position: relative;
+}
+.like i
+{
+    font-size: 20px;
+    right: 25px;
+    bottom: -10px;
+    position: absolute;
+}
+.like .fas
+{
+    color: transparent;
+    background-image: linear-gradient(#ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+.like .fas:hover
+{
+    transform: scale(1.15);
+    opacity: 1;
+}
+/*PAGE HEADER MENU*/
+header .title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .title .back
+{
+    position: absolute;
+    margin-right: 85%;
+    font-size: 20px;
+}
+/*SECTION*/
+.menu
+{
+    display: flex;
+    flex-direction: column;
+}
+.menulist
+{
+    background-color: #F2F2F2;
+    height: auto;
+    border-radius: 30px 30px 0 0;
+    height: auto;
+    padding: 0px 15px 0px 15px;
+}
+.menuimg
+{
+    height: 150px;
+}
+.menuimg img
+{
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.menutitle
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menucourses h3
+{
+    margin: 0;
+}
+.menucourses
+{
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.menucourses h3
+{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.bloccourses
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+}
+.bloccourses p
+{
+    font-weight: lighter;
+}
+.coursestitle
+{
+    width: 45px;
+    border-bottom: solid green 3px;
+    margin-bottom: 10px;
+}
+
+.menucard 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 10px rgb(209, 209, 209);
+    background-color: white;
+    border-radius: 15px;
+}
+.startersitem h4, p
+{
+    margin: 5px;
+}
+.startersitem
+{
+    width: 90%;
+    overflow: hidden;
+}
+.price
+{
+    margin: 10px;
+}
+.order .buy
+{
+    height: 50px;
+    text-decoration: none;
+    border-radius: 30px;
+}
+.order
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+/*footer*/
+footer
+{
+    background-color: rgb(59, 59, 59);
+    color: white;
+    padding: 10px 25px 20px 25px;
+}
+footer h2
+{
+    font-size: 18px;
+}
+footer a
+{
+    text-decoration: none;
+    color: white;
+}
+footer p
+{
+    margin-left: 0px;
+}
+footer i
+{
+    margin-right : 10px;
+}
