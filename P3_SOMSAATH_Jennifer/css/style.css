@@ -11,7 +11,7 @@ body
 
 body h1, h2
 {
-    font-family:'Shrikhand', cursive; ;
+    font-family:'Shrikhand', cursive; 
 }
 
 /*GENERAL*/
@@ -51,18 +51,6 @@ body h1, h2
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-.colorprim1
-{
-    color: #9356DC ;
-}
-.colorprim2
-{
-    color: #FF79DA;
-}
-.colorprim3
-{
-    color: #99E2D0;
 }
 
 /*LOADER*/
@@ -136,6 +124,11 @@ body h1, h2
     margin-bottom: 3px;
     width:100%;
 }
+.titlemenu
+{
+    font-family: 'Shrikhand', cursive;
+    text-align: center;
+}
 .title h1
 {
     margin:5px;
@@ -205,7 +198,7 @@ body h1, h2
     background-color: #9356dc;
     border-radius: 50%;
     position: absolute;
-    left: 10px;
+    left: 13px;
 }
 .fonction ol
 {
@@ -250,6 +243,7 @@ body h1, h2
     height: auto;
     width: 100%;
     padding: 20px 15px 50px 15px;
+    margin-top: 50px;
 }
 .restaurants h3
 {
@@ -257,14 +251,12 @@ body h1, h2
 }
 .blocrestaurants
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     gap: 15px;
 }
 .restaurantscard
 {
     height: auto;
+    position: relative;
     border-radius: 20px;
     box-shadow: 0px 1px 10px rgb(209, 209, 209);
     transition: all 200ms ease-in;
@@ -286,7 +278,7 @@ body h1, h2
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
 }
-.restaurantstitle h4, p
+.restaurantstitle h4, .restaurantstitle p
 {
     margin: 12px;
 }
@@ -294,6 +286,17 @@ body h1, h2
 {
     font-weight: lighter;
     margin-left: 12px;
+}
+.new 
+{
+    background-color: #99E2D0;
+    color: #098a6a;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 2px;
+    position: absolute;
+    top: 16px;
+    right: 12px;
 }
 .like
 {
@@ -320,24 +323,28 @@ body h1, h2
     transform: scale(1.15);
     opacity: 1;
 }
+
 /*PAGE HEADER MENU*/
-header .title
+.titlemenu 
 {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    position: relative;
+
 }
-header .title .back
+.backarrow
 {
     position: absolute;
-    margin-right: 85%;
-    font-size: 20px;
+    margin-right: 92%;
+    top: 30%;
+    font-size: 25px;
 }
 /*SECTION*/
-.menu
+.blocmenu
 {
-    display: flex;
-    flex-direction: column;
+    margin-left: 15px;
 }
 .menulist
 {
@@ -345,94 +352,211 @@ header .title .back
     height: auto;
     border-radius: 30px 30px 0 0;
     height: auto;
-    padding: 0px 15px 0px 15px;
 }
 .menuimg
 {
+    width: 100%;
     height: 150px;
 }
 .menuimg img
 {
-    width: 100%;
+    height: 200px;
     object-fit: cover;
-    z-index: -1;
-}
-.menutitle
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 100%;
 }
 .menucourses h3
 {
     margin: 0;
 }
+.menuheader
+{
+    background-color: #F2F2F2;
+    border-radius: 30px 30px 0 0;
+}
+.menuheader h1 
+{
+    margin-left: 10px;
+}
 .menucourses
 {
     display: flex;
     flex-direction:column;
-    gap: 10px;
+    gap: 50px;
     margin-bottom: 20px;
 }
 .menucourses h3
 {
     text-transform: uppercase;
-    font-weight: 300;
-}
-.bloccourses
-{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    gap: 10px;
-}
-.bloccourses p
-{
-    font-weight: lighter;
+    font-weight: 400;
 }
 .coursestitle
 {
     width: 45px;
-    border-bottom: solid green 3px;
+    border-bottom: solid #99E2D0 3px;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
-
 .menucard 
 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0px 1px 10px rgb(209, 209, 209);
     background-color: white;
     border-radius: 15px;
-}
-.startersitem h4, p
-{
-    margin: 5px;
-}
-.startersitem
-{
-    width: 90%;
     overflow: hidden;
+    transition: all 200ms ease-in;
+    animation: appear 1s alternate;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.menucard:hover
+{
+    cursor: pointer;
+}
+.menuitem
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.menuitem p, .menuitem h4
+{
+    margin: 0;
+}
+.menucontent
+{
+    padding: 16px;
 }
 .price
-{
-    margin: 10px;
+{   display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: auto;
+    align-items: flex-end;
+    margin-right: 13px;
+    overflow: hidden;
 }
-.order .buy
+.check
 {
-    height: 50px;
-    text-decoration: none;
-    border-radius: 30px;
+    background-color: #99E2D0;
+    width: 64px;
+    padding: 20px;
+    display:flex;
+    align-items:center;
+    text-align: center;
+    justify-content:center;
+    transition-duration: 0.5s;
+    margin-right: -80px;
+}
+.checkicon
+{
+    height: 26px;
+    width: 26px;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 100px;
+}
+.check .fas
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #99E2D0;
+    transition: all 0.5s;
+}
+.menucard:hover .check
+{
+    margin-right: 0;
+}
+.menucard:hover .check i 
+{
+    transform: rotate(360deg);
 }
 .order
 {
-    display:flex;
-    justify-content: center;
-    align-items: center;
     padding: 50px;
 }
-/*footer*/
+.order .orderbutton
+{
+    height: 50px;
+    width: 190px;
+    font-size: large;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 3px 10px rgb(177, 177, 177);
+    color: white;
+    background-image: linear-gradient(to bottom right,#ff79da, #9356dc);
+    transition: all 200ms ease-in;
+}
+.order .orderbutton:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*RESPONSIVE*/
+@media screen and (min-width:688px)
+{
+
+    .fonction
+    {
+        margin-left: 30px;
+    }
+    .fonction ol 
+    {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        width: 95%;
+    }
+    .fonction p 
+    {
+        margin-left: -10px;
+        left: inherit;
+        position: unset;
+    }
+    .fonction i
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .blocrestaurants
+    {
+        flex-direction: row;
+        gap: 0;
+        column-gap: 16px;
+    }
+    .restaurantscard
+    {
+        width: 45%;
+    }
+    .rest1
+    {
+        margin-bottom: 40px;
+    }
+    .new
+    {
+        margin-left: 10px;
+        left: inherit;
+    }
+    .blocmenu
+    {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+    .menucourses
+    {
+        width: 33%;
+    }
+}
+
+/*FOOTER*/
 footer
 {
     background-color: rgb(59, 59, 59);
@@ -455,4 +579,36 @@ footer p
 footer i
 {
     margin-right : 10px;
+}
+
+/*ANIMATION*/
+.anim1
+{
+    animation-delay: 0.25s;
+}
+.anim2
+{
+    animation-delay: 0.5s;
+}
+.anim3
+{
+    animation-delay: 1s;
+}
+.anim4
+{
+    animation-delay: 1.5s;
+}
+@keyframes appear
+{
+    100%{
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
+.allanim
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
 }
